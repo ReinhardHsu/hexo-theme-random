@@ -4,12 +4,11 @@ language: en
 
 # main menu navigation
 menu:
-  Home: index.html
+  Home: /
   Archives: archives
   Tags: tags
   Categories: categories
   About: about
-  Github: https://github.com/stiekel/hexo-theme-random
 
 social:
   GitHub: https://github.com/stiekel/hexo-theme-random
@@ -76,7 +75,7 @@ turnoffBackgroundImage:
   # arcihve / categories / tags
   post_list: false
   # post and page
-  post: true
+  post: false
 # when you turn off backgrounds, you can set a background color.
 backgroundColor: 34495E
  

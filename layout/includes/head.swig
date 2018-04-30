@@ -1,4 +1,4 @@
-{% set pageTitle = page.title || config.subtitle || '' %}
+{% set pageTitle = '' %}
 {% if is_archive() %}
   {% set pageTitle = _p('archive_title') %}
 {% endif %}
@@ -14,7 +14,15 @@
 {% if is_year() %}
   {% set pageTitle = pageTitle + ': ' + page.year %}
 {% endif %}
-{% set pageTitle = pageTitle + ' [ ' + config.title + ' ]' %}
+{% if pageTitle %}
+  {% set pageTitle = pageTitle + ' - ' + config.title  %}
+{% else %}
+    {% if page.title %}
+      {% set pageTitle = page.title + ' - ' + config.title  %}
+    {% else %}
+      {% set pageTitle = config.title + ' - ' + config.subtitle  %}
+    {% endif %}
+{% endif %}
 <!doctype html>
 <html lang="{{ config.language }}">
 <head>
